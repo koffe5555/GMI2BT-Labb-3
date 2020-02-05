@@ -1,24 +1,28 @@
 import requests
 import json
 
-ContainerSearch = []
 ContainerSave = []
 
 class MainMenu():
     def __init__(self):
         def menu(self):
             answer = input('1. Sök film\n2. Visa senaste sökning\n3. Avsluta\n\n')
-            while True:
-                if answer == '1':
-                    Movie()
-                    menu(self)
-                    break
-                elif answer == '2':
-                    menu2()
-                    menu(self)
-                    break
-                else:
-                    break
+            try:
+                while True:
+                    if answer == '1':
+                        Movie()
+                        menu(self)
+                        break
+                    elif answer == '2':
+                        menu2()
+                        menu(self)
+                        break
+                    #elif answer == '3':
+                        #break
+                    else:
+                        break
+            except ValueError as error:
+                print(error)
         menu(self)
 
 
@@ -26,7 +30,6 @@ class Movie():
     def __init__(self):
         def ApiMovie(self):
             movie = input('Search: ')
-            ContainerSearch.append(movie)
             try:
                 api = requests.get(f'http://www.omdbapi.com/?apikey=fa029d1c&s={movie}')
                 info = api.json() #Hämta api från URL
@@ -54,17 +57,18 @@ class Movie():
 
             try:
                 with open('SearchMovies.json', 'w', encoding='utf-8') as j_fil:
-                    json.dump(choice, j_fil, ensure_ascii=False, indent=4)
+                    json.dump(ContainerSave, j_fil, ensure_ascii=False, indent=4)
             except FileNotFoundError as error:
                 print(error)
 
         ApiMovie(self)
-
+#Lista till json kunna skriva ut vilka filmer man valt, 2.2 ska sedan kunna gå in i listan och skriva ut vilken man väljer som for med count
 class menu2():
     def __init__(self):
         def menu2(self):
-            userin = int(input('1 Visa information om senaste sökta filmer\n2. Visa information om vald film\n'))
+            
             try:
+                userin = int(input('1 Visa information om senaste sökta filmer\n2. Visa information om vald film\n'))
                 if userin == 1:
                     for line in ContainerSave:
                         print(line['Title'], line['Year'])
@@ -72,7 +76,7 @@ class menu2():
                     History()
                 else:
                     menu2(self)       
-            except:
+            except ValueError:
                 print('Skriv 1 eller 2 !!')
         menu2(self)
 
@@ -82,7 +86,7 @@ class History():
             try:
                 with open('SearchMovies.json', 'r', encoding='utf-8') as file_read:
                     show = json.load(file_read)
-                    print(show)
+                    print(show['Title'])
             except FileNotFoundError as error:
                 print(error)
         SearchHistory(self) 
