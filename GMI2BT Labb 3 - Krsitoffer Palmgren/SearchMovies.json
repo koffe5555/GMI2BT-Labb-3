@@ -1,23 +1,7 @@
-[
-    {
-        "Title": "Harry Potter and the Sorcerer's Stone",
-        "Year": "2001",
-        "imdbID": "tt0241527",
-        "Type": "movie",
-        "Poster": "https://m.media-amazon.com/images/M/MV5BNjQ3NWNlNmQtMTE5ZS00MDdmLTlkZjUtZTBlM2UxMGFiMTU3XkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_SX300.jpg"
-    },
-    {
-        "Title": "Naruto",
-        "Year": "2002–2007",
-        "imdbID": "tt0409591",
-        "Type": "series",
-        "Poster": "https://m.media-amazon.com/images/M/MV5BZmQ5NGFiNWEtMmMyMC00MDdiLTg4YjktOGY5Yzc2MDUxMTE1XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg"
-    },
-    {
-        "Title": "Dragon Ball",
-        "Year": "1995–2003",
-        "imdbID": "tt0280249",
-        "Type": "series",
-        "Poster": "https://m.media-amazon.com/images/M/MV5BNDYyNTJkNmItYjgxNC00ODliLTg2MGMtZjkxNjEwYzdjNjUxXkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg"
-    }
-]
+{
+    "Title": "James Bond 007: Everything or Nothing",
+    "Year": "2003",
+    "imdbID": "tt0366629",
+    "Type": "game",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BMTk2MDYwMDU1Nl5BMl5BanBnXkFtZTgwNTM2NTQ3MDE@._V1_SX300.jpg"
+}
